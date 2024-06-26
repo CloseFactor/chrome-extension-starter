@@ -1,6 +1,5 @@
 import { injectMetaScripts } from './sample-scripts';
-
-const samplePageUrlRegex = /.*google\.com.*|.*localhost:4200.*/;
+import {SAMPLE_PAGE_URL_REGEX} from "../../../shared/lib/page-regex";
 
 export function registerSampleModule() {
   registerSampleTabListener();
@@ -9,7 +8,7 @@ export function registerSampleModule() {
 function registerSampleTabListener() {
   chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete') {
-      if (tab.url?.match(samplePageUrlRegex)) {
+      if (tab.url?.match(SAMPLE_PAGE_URL_REGEX)) {
         return injectMetaScripts(tabId);
       }
     }

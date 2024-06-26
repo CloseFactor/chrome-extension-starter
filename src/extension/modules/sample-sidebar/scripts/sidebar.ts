@@ -11,17 +11,15 @@ let cachedStyle: string;
 chrome.runtime.onMessage.addListener((message) => {
   if (message.type === MessageType.SHOW_EXTENSION) {
     showSidebar();
-    return Promise.resolve();
   } else if (message.type === MessageType.HIDE_EXTENSION) {
     hideSidebar();
-    return Promise.resolve();
   }
   return false;
 });
 
 export function embedSidebar() {
   const iframeUrl: string = chrome.runtime.getURL(
-    'extension/modules/ingest/components/sidebar/sidebar-wrapper.html'
+    'extension/modules/sample-sidebar/components/sidebar/sidebar-wrapper.html'
   );
   const styleUrl: string = chrome.runtime.getURL('assets/sidebar.css');
 

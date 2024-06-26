@@ -6,5 +6,5 @@
 export const Environment = {
   mode: import.meta.env.MODE,
   // envValue: import.meta.env.VITE_<KEY_NAME>,
-  sidebarDomain: 'https://www.google.com',
+  sidebarDomain: 'https://closefactor.com',
 };

@@ -15,4 +15,5 @@ export enum MessageType {
   SHOW_EXTENSION = 'show_extension',
   HIDE_EXTENSION = 'hide_extension',
   GET_CURRENT_TAB_URL = 'get_current_tab_url',
+  GET_CURRENT_TAB = 'get_current_tab',
 }

@@ -15,7 +15,7 @@ export function init() {
     }
   });
   chrome.runtime.sendMessage({ type: MessageType.GET_CURRENT_TAB_URL }).then((response) => {
-    if (response?.currentTabUrl) {
+    if (response?.currentTabUrl !== undefined) {
       updatePage(response.currentTabUrl);
     }
   });

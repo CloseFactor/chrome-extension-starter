@@ -4,9 +4,6 @@
   "description": "Chrome Extension Starter",
   "version": "1.0.0",
   "icons" : {
-    "32": "",
-    "64": "",
-    "128": ""
   },
   "content_scripts": [
   ],
@@ -30,11 +27,11 @@
     }
   ],
   "host_permissions": [
+    "*://*.google.com/*"
   ],
   "permissions": [
     "scripting",
     "tabs",
     "storage"
-  ],
-  "key": "<Chrome Webstore Provided Key>"
+  ]
 }
