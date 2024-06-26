@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <img src="img/sample-logo.svg" alt="logo" class="mt-2 logo" />
+      <div id="signed-in" class="flex-container hidden">
+        <div>
+          Sample extension popup. Register listeners for the buttons in popup.ts.
+        </div>
+        <div class="mt-4 mb-4" style="width: 150px">
+          <button id="sample-btn" class="btn">Click Me!</button>
+        </div>
+      </div>
+      <div id="version" class="flex-container" style="font-size: small"></div>
+    </div>
+    <script type="module" src="popup.ts"></script>
+  </body>
+</html>

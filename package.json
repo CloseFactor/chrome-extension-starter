@@ -1,0 +1,49 @@
+{
+  "name": "chrome-extension-starter",
+  "version": "1.0.0",
+  "description": "Chrome Extension Starter",
+  "scripts": {
+    "prettier": "npx prettier **/*.{js,ts,htm,html,md,css} -w",
+    "lint": "eslint **/*.{js,ts}",
+    "lint:fix": "npm run lint -- --fix",
+    "dev": "tsc && vite build -m development && npm run dev-manifest",
+    "build": "tsc && vite build",
+    "local": "tsc && vite build -m dev-local && npm run dev-manifest",
+    "dev:watch": "tsc && vite build -m development --watch && npm run dev-manifest",
+    "build:watch": "tsc && vite build --watch",
+    "local:watch": "tsc && vite build -m dev-local --watch && npm run dev-manifest",
+    "dev-manifest": "jq '.host_permissions += [\"*://localhost/*\"]' dist/manifest.json > manifest_new.json && mv manifest_new.json dist/manifest.json",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CloseFactor/chrome-extension-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CloseFactor/chrome-extension-starter/issues"
+  },
+  "homepage": "https://github.com/CloseFactor/chrome-extension-starter#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.0.236",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "glob": "^10.2.6",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "2.8.4",
+    "typescript": "^4.9.5",
+    "vite": "5.3.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "npx eslint --fix"
+    ],
+    "**/*.{js,ts,htm,html,md,css}": [
+      "npx prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+.iframe-style {
+  all: unset;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000000;
+  width: 350px;
+  height: 100%;
+  background: white;
+  border: none;
+  box-shadow: -3px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  flex-direction: column;
+  color: black;
+  font-family: 'Roboto', Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
