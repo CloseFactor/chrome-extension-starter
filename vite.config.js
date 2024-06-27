@@ -11,8 +11,8 @@ export default defineConfig({
   publicDir,
   resolve: {
     alias: {
-      '@public': publicDir
-    }
+      '@public': publicDir,
+    },
   },
   build: {
     target: 'esnext',
@@ -35,19 +35,19 @@ export default defineConfig({
           relative('src', file.slice(0, file.length - extname(file).length)),
           // This expands the relative paths to absolute paths, so e.g.
           // /src/nested/foo becomes /project/src/nested/foo.js
-          fileURLToPath(new URL(file, import.meta.url))
+          fileURLToPath(new URL(file, import.meta.url)),
         ])
       ),
       output: {
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
-        assetFileNames: 'assets/[name][extname]'
-      }
-    }
+        assetFileNames: 'assets/[name][extname]',
+      },
+    },
   },
   css: {
     modules: {
-      localsConvention: 'camelCaseOnly'
-    }
-  }
+      localsConvention: 'camelCaseOnly',
+    },
+  },
 });

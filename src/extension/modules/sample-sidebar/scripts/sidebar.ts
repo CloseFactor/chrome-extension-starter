@@ -42,7 +42,9 @@ export function embedSidebar() {
 }
 
 export function showSidebar() {
-  const iframe: HTMLIFrameElement | null = document.getElementById(IFRAME_ID) as HTMLIFrameElement;
+  const iframe: HTMLIFrameElement | null = document.getElementById(
+    IFRAME_ID
+  ) as HTMLIFrameElement;
   if (iframe) {
     cachedStyle = document.body.getAttribute('style') || '';
     document.body.setAttribute(
@@ -54,7 +56,9 @@ export function showSidebar() {
 }
 
 export function hideSidebar() {
-  const iframe: HTMLIFrameElement | null = document.getElementById(IFRAME_ID) as HTMLIFrameElement;
+  const iframe: HTMLIFrameElement | null = document.getElementById(
+    IFRAME_ID
+  ) as HTMLIFrameElement;
   if (iframe) {
     document.body.setAttribute('style', cachedStyle);
     iframe.style.display = 'none';

@@ -14,15 +14,19 @@ export function init() {
       updatePage(message.url);
     }
   });
-  chrome.runtime.sendMessage({ type: MessageType.GET_CURRENT_TAB_URL }).then((response) => {
-    if (response?.currentTabUrl !== undefined) {
-      updatePage(response.currentTabUrl);
-    }
-  });
+  chrome.runtime
+    .sendMessage({ type: MessageType.GET_CURRENT_TAB_URL })
+    .then((response) => {
+      if (response?.currentTabUrl !== undefined) {
+        updatePage(response.currentTabUrl);
+      }
+    });
 }
 
 export function updatePage(url?: string) {
-  const iframe: HTMLIFrameElement | null = document.getElementById(IFRAME_ID) as HTMLIFrameElement;
+  const iframe: HTMLIFrameElement | null = document.getElementById(
+    IFRAME_ID
+  ) as HTMLIFrameElement;
   if (iframe) {
     iframe.src = `${ROOT_DOMAIN}/${url}`;
   }

@@ -1,5 +1,5 @@
 import { injectMetaScripts } from './sample-scripts';
-import {SAMPLE_PAGE_URL_REGEX} from "../../../shared/lib/page-regex";
+import { SAMPLE_PAGE_URL_REGEX } from '../../../shared/lib/page-regex';
 
 export function registerSampleModule() {
   registerSampleTabListener();

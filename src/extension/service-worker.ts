@@ -1,5 +1,5 @@
-import {registerSampleModule} from "./modules/sample-module/sample.module";
-import {registerSimpleSidebarModule} from "./modules/sample-sidebar/sample-sidebar.module";
+import { registerSampleModule } from './modules/sample-module/sample.module';
+import { registerSimpleSidebarModule } from './modules/sample-sidebar/sample-sidebar.module';
 
 /**
  * Service Worker is the long-running mechanism of the Chrome extension. Logic here will be executed when the extension
@@ -15,4 +15,3 @@ import {registerSimpleSidebarModule} from "./modules/sample-sidebar/sample-sideb
 // registered here. This keeps the service worker clean and easy to read.
 registerSampleModule();
 registerSimpleSidebarModule();
-

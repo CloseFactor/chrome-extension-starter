@@ -19,7 +19,7 @@ async function injectSampleMetaTagScripts(tabId: number) {
     target: { tabId },
     injectImmediately: false,
     func: addVersionMetaTag,
-    args: [version]
+    args: [version],
   });
 }
 
