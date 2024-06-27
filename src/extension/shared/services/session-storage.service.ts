@@ -17,7 +17,7 @@ export class SessionStorageService {
   }
 
   async getFromMap<T>(mapName: string, key: string): Promise<T | undefined> {
-    return this.get<any>(mapName).then((mapObject) => {
+    return this.get<unknown>(mapName).then((mapObject) => {
       const map = this.marshallMap<T>(mapObject);
       if (!map || !map.has(key)) {
         return undefined;
@@ -27,23 +27,23 @@ export class SessionStorageService {
   }
 
   async setToMap<T>(mapName: string, key: string, value: T): Promise<void> {
-    return this.get<any>(mapName).then(async (mapObject) => {
+    return this.get<unknown>(mapName).then(async (mapObject) => {
       const map = this.marshallMap<T>(mapObject);
       map.set(key, value);
-      await this.set<any>(mapName, Object.fromEntries(map.entries()));
+      await this.set<unknown>(mapName, Object.fromEntries(map.entries()));
       return Promise.resolve();
     });
   }
 
   async removeFromMap<T>(mapName: string, key: string): Promise<T | undefined> {
-    return this.get<any>(mapName).then(async (mapObject) => {
+    return this.get<unknown>(mapName).then(async (mapObject) => {
       const map = this.marshallMap<T>(mapObject);
       if (!map.has(key)) {
         return Promise.resolve(undefined);
       }
       const deletedValue = map.get(key);
       map.delete(key);
-      await this.set<any>(mapName, Object.fromEntries(map.entries()));
+      await this.set<unknown>(mapName, Object.fromEntries(map.entries()));
       return Promise.resolve(deletedValue);
     });
   }
@@ -70,7 +70,7 @@ export class SessionStorageService {
     });
   }
 
-  marshallMap<T>(mapObject: any): Map<string, T> {
+  marshallMap<T>(mapObject: unknown): Map<string, T> {
     const map = new Map<string, T>();
     if (!mapObject) {
       return map;

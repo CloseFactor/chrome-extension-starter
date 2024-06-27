@@ -8,7 +8,7 @@ import { SAMPLE_PAGE_URL_REGEX } from '../../../shared/lib/page-regex';
 
 const sessionStorageService = new SessionStorageService();
 
-export function registerSimpleSidebarModule() {
+export function registerSampleSidebarModule() {
   registerExtensionSidebarUpdater();
   registerCurrentTabListener();
   registerCurrentTabUrlListener();
@@ -29,7 +29,7 @@ function registerCurrentTabUrlListener() {
       if (request.type === MessageType.GET_CURRENT_TAB_URL) {
         (async () => {
           if (sender.tab && sender.tab.id) {
-            let displayMode =
+            const displayMode =
               await sessionStorageService.getFromMap<SidebarDisplayMode>(
                 SessionMapNames.TAB_IDS_TO_DISPLAY_URLS,
                 String(sender.tab.id)

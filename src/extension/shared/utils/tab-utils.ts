@@ -1,4 +1,4 @@
-export async function openBackgroundPopup(url: string, currentTabId = 0) {
+export async function openBackgroundPopup(url: string) {
   return chrome.tabs.create({
     url,
     pinned: true,
